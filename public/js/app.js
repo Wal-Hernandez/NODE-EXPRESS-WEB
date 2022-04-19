@@ -1,7 +1,7 @@
 const contactForm = document.querySelector(".form");
 let name = document.getElementById("name");
 let message = document.getElementById("message");
-console.log(process.env.MY_EMAIL)
+
 contactForm.addEventListener("submit", (e) => {
   e.preventDefault();
 
