@@ -14,6 +14,7 @@ router.post("/contact", (req, res) => {
   const transporter = nodemailer.createTransport({
     host: 'mail.privateemail.com',
     port: 465,
+    name: "wal",
     auth: {
       user: process.env.MY_EMAIL,
       pass: process.env.PASS,
@@ -33,7 +34,7 @@ router.post("/contact", (req, res) => {
   transporter.sendMail(mailOptions, (error, info) => {
     if (error) {
       console.log(error);
-      res.send("error");
+      res.send(error);
     } else {
       console.log("email sent: " + info.response);
       res.send("success");
